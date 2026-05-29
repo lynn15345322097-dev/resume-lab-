@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刘璇 | 个人简历</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #2c2c2c;
+      background: #fafafa;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .chinese { font-family: 'Noto Serif SC', 'Songti SC', serif; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    :root {
+      --accent: #8b5cf6;
+      --accent-light: #f5f3ff;
+      --accent-dark: #7c3aed;
+      --text-primary: #1f1f1f;
+      --text-secondary: #555;
+      --text-light: #999;
+      --bg-white: #ffffff;
+      --bg-gray: #f5f5f5;
+      --border: #e8e8e8;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 40px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .header-left {
+      flex: 1;
+    }
+    .header-left h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .header-left .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .header-left p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2px;
+    }
+    .header-left .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-top: 16px;
+    }
+    .header-left .info-grid span {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .header-left .info-grid .label {
+      color: var(--text-light);
+      margin-right: 4px;
+    }
+    .header-avatar {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #fff;
+      font-family: 'Noto Serif SC', serif;
+      box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .contact-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: var(--bg-gray);
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+    .contact-bar a:hover {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    /* ===== Nav ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    nav a {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-light);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ===== Section ===== */
+    section { padding: 56px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+      font-family: 'Noto Serif SC', serif;
+    }
+
+    /* ===== Education ===== */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-item .edu-left h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    .edu-item .edu-left .edu-meta {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .edu-item .edu-left .edu-detail {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+    .edu-item .edu-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+
+    /* ===== Research Cards ===== */
+    .research-item {
+      padding: 20px 24px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 14px;
+      transition: all 0.2s;
+    }
+    .research-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 12px rgba(139,92,246,0.06);
+    }
+    .research-item:last-child { margin-bottom: 0; }
+    .research-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .research-header h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    .research-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .research-date {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ===== Publications ===== */
+    .pub-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-item .pub-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+    .pub-item .pub-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .pub-item .pub-meta .pub-journal {
+      font-style: italic;
+    }
+    .pub-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      padding: 1px 8px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ===== Awards ===== */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .award-card {
+      padding: 16px 20px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .award-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .award-card .award-date {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .award-card .award-name {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .award-card .award-detail {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ===== Projects ===== */
+    .proj-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .proj-item:last-child { border-bottom: none; }
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .proj-header h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    .proj-role {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .proj-date {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .proj-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== Skills ===== */
+    .skills-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      padding: 6px 16px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column-reverse; align-items: center; text-align: center; }
+      .header-left .info-grid { justify-content: center; }
+      .contact-bar { justify-content: center; }
+      .header-avatar { width: 80px; height: 80px; font-size: 2rem; }
+      .edu-item { flex-direction: column; gap: 4px; }
+      .edu-item .edu-date { margin-left: 0; }
+      .research-header { flex-direction: column; gap: 6px; }
+      .proj-header { flex-direction: column; gap: 4px; }
+      .awards-grid { grid-template-columns: 1fr; }
+      nav a { padding: 12px 14px; font-size: 0.82rem; }
+      section { padding: 40px 0; }
+      .header-left h1 { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .awards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-left">
+          <h1 class="chinese">刘璇</h1>
+          <div class="subtitle chinese">中国传媒大学 · 艺术学硕士研究生</div>
+          <div class="info-grid">
+            <span><span class="label">出生</span>2001.12</span>
+            <span><span class="label">籍贯</span>山东青岛</span>
+            <span><span class="label">政治面貌</span>中共党员</span>
+            <span><span class="label">外语</span>CET4 534 · CET6 457</span>
+          </div>
+          <div class="contact-bar">
+            <a href="mailto:lynn@example.com">✉ lynn15345322097@gmail.com</a>
+            <a href="https://github.com/lynn15345322097-dev" target="_blank">⌘ GitHub</a>
+            <a href="#">📍 北京</a>
+          </div>
+        </div>
+        <div class="header-avatar chinese">璇</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Sticky Nav ===== -->
+  <nav id="nav">
+    <div class="container">
+      <a href="#education">教育背景</a>
+      <a href="#research">科研经历</a>
+      <a href="#publications">发表成果</a>
+      <a href="#projects">项目实践</a>
+      <a href="#awards">获奖荣誉</a>
+      <a href="#skills">技能</a>
+    </div>
+  </nav>
+
+  <!-- ===== Education ===== -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title chinese">教育背景</h2>
+      <div class="edu-item">
+        <div class="edu-left">
+          <h3 class="chinese">中国传媒大学</h3>
+          <div class="edu-meta chinese">艺术研究院 · 艺术学（硕士研究生）</div>
+          <div class="edu-detail chinese">主修：电影博物馆化、媒介考古学、文艺理论 / 辅修：信息通信与工程学院 · 智能视听与交互专业</div>
+        </div>
+        <div class="edu-date">2024.09 – 2027.06</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-left">
+          <h3 class="chinese">山东师范大学</h3>
+          <div class="edu-meta chinese">新闻与传媒学院 · 戏剧影视文学（本科）</div>
+        </div>
+        <div class="edu-date">2020.09 – 2024.06</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Research ===== -->
+  <section id="research">
+    <div class="container">
+      <h2 class="section-title chinese">科研经历</h2>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">中国电影地缘文化研究基地项目</h3>
+          <span class="research-role">主持人</span>
+        </div>
+        <div class="research-date">2026.04 – 至今</div>
+      </div>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">北京国际电影节青年学者论坛</h3>
+          <span class="research-role">独立作者</span>
+        </div>
+        <div class="research-date">2026.04</div>
+      </div>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">《2026年跨年晚会融合创新发展态势研究报告》</h3>
+          <span class="research-role">成员</span>
+        </div>
+        <div class="research-date">2026.01</div>
+      </div>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">智能视听与交互专业结业设计</h3>
+          <span class="research-role">负责人</span>
+        </div>
+        <div class="research-date">2026.04 – 至今</div>
+      </div>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">文化和旅游部部级社科研究课题</h3>
+          <span class="research-role">报告撰写</span>
+        </div>
+        <div class="research-date">2025.04 – 2026.05</div>
+      </div>
+
+      <div class="research-item">
+        <div class="research-header">
+          <h3 class="chinese">教育部语合中心项目</h3>
+          <span class="research-role">成员</span>
+        </div>
+        <div class="research-date">2024.11 – 2025.10</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Publications ===== -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title chinese">发表成果</h2>
+
+      <div class="pub-item">
+        <div class="pub-title chinese">文化强国视域下纪录片推动中华优秀传统文化国际传播的理念与路径</div>
+        <div class="pub-meta">
+          第二作者 · <span class="pub-journal chinese">《中国编辑》</span>（CSSCI）
+          <span class="pub-badge">CSSCI</span>
+        </div>
+        <div class="pub-meta" style="font-size:0.82rem;color:var(--text-light);margin-top:2px;">2026.03</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title chinese">以独立作者 / 第二作者身份在《中国艺术报》《江西日报》《齐鲁晚报》等主流媒体发表文艺评论共 11 篇</div>
+        <div class="pub-meta" style="font-size:0.82rem;color:var(--text-light);">2023 – 至今</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title chinese">项目实践</h2>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <h3 class="chinese">中国传媒大学艺术研究院「艺元计划」</h3>
+          <span class="proj-role">策划与线上展示平台搭建</span>
+        </div>
+        <div class="proj-date">2026.04 – 至今</div>
+        <div class="proj-desc chinese">负责项目策划方案撰写及线上展示平台的搭建与运营。</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <h3 class="chinese">清华大学乡村振兴工作站赴广西三江支队</h3>
+          <span class="proj-role">宣传组组长</span>
+        </div>
+        <div class="proj-date">2026.02</div>
+        <div class="proj-desc chinese">统筹支队宣传工作，负责影像记录、新闻撰写与媒体传播，深入广西三江开展乡村振兴实践。</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <h3 class="chinese">北京市第一实验学校博物馆建设</h3>
+          <span class="proj-role">学生团队负责人</span>
+        </div>
+        <div class="proj-date">2025.11 – 至今</div>
+        <div class="proj-desc chinese">带领团队参与学校博物馆筹建，推进展陈策划与内容建设。</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <h3 class="chinese">SPIRIT 传神影像</h3>
+          <span class="proj-role">策展人、主持人</span>
+        </div>
+        <div class="proj-date">2025.09 – 至今</div>
+        <div class="proj-desc chinese">负责影像展的策展统筹、影片遴选及放映活动的现场主持。</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <h3 class="chinese">中传通识核心课</h3>
+          <span class="proj-role">课程助教</span>
+        </div>
+        <div class="proj-date">2025.03 – 至今</div>
+        <div class="proj-desc chinese">协助课程设计与教学管理，参与课堂讨论引导与学生答疑。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Awards ===== -->
+  <section id="awards">
+    <div class="container">
+      <h2 class="section-title chinese">获奖荣誉</h2>
+      <div class="awards-grid">
+
+        <div class="award-card">
+          <div class="award-date">2025.11</div>
+          <div class="award-name chinese">中国传媒大学硕士研究生一等奖学金</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2025.07</div>
+          <div class="award-name chinese">论文入选厦门大学青年电影论坛</div>
+          <div class="award-detail chinese">500 余份投稿，仅入选 39 篇</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2024.10</div>
+          <div class="award-name chinese">中国艺术学理论学会艺术史专业委员会年会论文评选二等奖</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2024.07</div>
+          <div class="award-name chinese">论文入选中国文艺理论学会第十二届青年论坛</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2024.07</div>
+          <div class="award-name chinese">山东省优秀毕业生</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2024.05</div>
+          <div class="award-name chinese">山东师范大学本科生优秀毕业论文</div>
+          <div class="award-detail chinese">专业前 2%</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2023 / 2024.08</div>
+          <div class="award-name chinese">中国好创意暨全国数字艺术设计大赛二等奖</div>
+          <div class="award-detail chinese">学术论文赛道</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2023.07</div>
+          <div class="award-name chinese">科普杯全国摄影大展入展</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2023.05</div>
+          <div class="award-name chinese">山东省泰山大学生影评大赛</div>
+          <div class="award-detail chinese">本科生组长评单元一等奖 · 短评单元三等奖</div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-date">2022.01</div>
+          <div class="award-name chinese">共青团中央「镜头中的三下乡」优秀视频团队</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title chinese">技能</h2>
+
+      <h3 style="font-size:0.9rem;font-weight:500;color:var(--text-secondary);margin-bottom:10px;">研究方向</h3>
+      <div class="skills-section" style="margin-bottom:24px;">
+        <span class="skill-tag chinese">电影博物馆化</span>
+        <span class="skill-tag chinese">媒介考古学</span>
+        <span class="skill-tag chinese">电影本体论</span>
+        <span class="skill-tag chinese">数字文化遗产</span>
+        <span class="skill-tag chinese">文艺理论</span>
+        <span class="skill-tag chinese">学术论文写作</span>
+        <span class="skill-tag chinese">文化研究</span>
+      </div>
+
+      <h3 style="font-size:0.9rem;font-weight:500;color:var(--text-secondary);margin-bottom:10px;">技术能力</h3>
+      <div class="skills-section" style="margin-bottom:24px;">
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">Blender</span>
+        <span class="skill-tag">Zotero</span>
+      </div>
+
+      <h3 style="font-size:0.9rem;font-weight:500;color:var(--text-secondary);margin-bottom:10px;">语言</h3>
+      <div class="skills-section">
+        <span class="skill-tag">中文（母语）</span>
+        <span class="skill-tag">英语（CET6）</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 刘璇. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav active state
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#nav a');
+
+    function updateActiveLink() {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.offsetTop - 100;
+        if (window.scrollY >= top) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+  </script>
+</body>
+</html>
